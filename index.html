@@ -1,34 +1,131 @@
 <!DOCTYPE html>
 <html>
+<head>
   <style>
-    img {
-      margin: 0 auto;
-      max-width: 90vw;
-      max-height: 90vh;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: #f8f9fa;
+      padding: 2rem;
+    }
+
+    .logo-container {
+      margin-bottom: 4rem;
+    }
+
+    .logo {
+      max-width: 90vw;
+      max-height: 40vh;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .tool-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .tool-icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+
+    .tool-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2d3748;
+    }
+
+    .tool-description {
+      color: #718096;
+      margin-bottom: 1rem;
+    }
+
+    .tool-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #4299e1;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: #ebf8ff;
+      transition: background 0.2s;
+    }
+
+    .tool-link:hover {
+      background: #bee3f8;
     }
   </style>
+</head>
 
-  <body>
-    <img src="./hex.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-NKBCY5EN6E"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+<body>
+  <div class="logo-container">
+    <img src="./hex.png" class="logo" alt="Hexviz Logo" />
+  </div>
 
-      gtag("config", "G-NKBCY5EN6E");
-    </script>
-  </body>
+  <div class="tools-grid">
+    <div class="tool-card">
+      <svg class="tool-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 7H4V19H20V7Z" stroke="#4299e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 7V5C8 4.44772 8.44772 4 9 4H15C15.5523 4 16 4.44772 16 5V7" stroke="#4299e1" stroke-width="2"/>
+        <path d="M7 13H17" stroke="#4299e1" stroke-width="2" stroke-linecap="round"/>
+        <path d="M7 16H17" stroke="#4299e1" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h2 class="tool-title">3D Bars Compare</h2>
+      <p class="tool-description">Interactive 3D bar chart comparison tool</p>
+      <a href="https://compare.hexviz.com/" class="tool-link">Open Tool</a>
+    </div>
+
+    <div class="tool-card">
+      <svg class="tool-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4V20" stroke="#4299e1" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 12H20" stroke="#4299e1" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="12" r="3" stroke="#4299e1" stroke-width="2"/>
+        <circle cx="6" cy="12" r="2" stroke="#4299e1" stroke-width="2"/>
+        <circle cx="18" cy="12" r="2" stroke="#4299e1" stroke-width="2"/>
+        <circle cx="12" cy="6" r="2" stroke="#4299e1" stroke-width="2"/>
+        <circle cx="12" cy="18" r="2" stroke="#4299e1" stroke-width="2"/>
+      </svg>
+      <h2 class="tool-title">Org Chart</h2>
+      <p class="tool-description">Interactive organizational chart visualization</p>
+      <a href="https://orgchart.hexviz.com/" class="tool-link">Open Tool</a>
+    </div>
+  </div>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NKBCY5EN6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-NKBCY5EN6E");
+  </script>
+</body>
 </html>
